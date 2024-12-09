@@ -1,8 +1,7 @@
-# Running the website
+# Running The Website
 1. Install visual studio code
 2. Go to the extensions tab and install this extension [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 3. Navigate to the index.html file and click on "Go Live" on the bottom right of the editor.
-4. 
 
 # JavaScript
 
@@ -42,13 +41,13 @@ A Promise is in one of these states:
 
 ![promises](docs/promises.png)
 
-#### Let's come back to the async await. 
+#### Let's come back to the async await.
 
 **`async`** and **`await`** are used in JavaScript to handle asynchronous code in a way that looks more like synchronous code, making it easier to read and write.
 
-1. **`async`**:  
-    - Declares a function as asynchronous.  
-    - Automatically wraps the return value in a Promise.  
+1. **`async`**:
+    - Declares a function as asynchronous.
+    - Automatically wraps the return value in a Promise.
 
    ```javascript
    async function myFunction() {
@@ -57,7 +56,7 @@ A Promise is in one of these states:
    myFunction().then(console.log); // Outputs: Hello!
    ```
 
-2. **`await`**:  
+2. **`await`**:
     - Pauses the execution of an `async` function until a Promise resolves.
     - Allows you to work with the resolved value directly.
 
@@ -116,6 +115,3 @@ The History API provides access to the browser's session history through the his
 | `back()`    | Loads the previous URL in the history list |
 | `forward()` | Loads the next URL in the history list     |
 | `go()`      | Loads a specific URL from the history list |
-
-
-
