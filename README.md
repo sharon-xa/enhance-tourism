@@ -1,6 +1,6 @@
 # Running The Website
 1. Install visual studio code.
-2. Go to the extensions tab and install this extension [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+2. Go to the extensions tab and install this extension ["Live Server"](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 3. Navigate to the index.html file and click on "Go Live" on the bottom right of the editor.
 
 # JavaScript
