@@ -1,24 +1,48 @@
 :root {
-  --primary-color: #3498db;
+  --primary-color: #7ab730;
   --text-color: #333;
+  --background: #eee;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.5;
+	min-height: 100vh;
   color: var(--text-color);
+  background-color: var(--background);
+}
+
+img,
+picture,
+svg,
+video {
+	max-width: 100%;
+	display: block;
+}
+
+.pc-text {
+  color: var(--primary-color);  
+}
+
+.pc-bg {
+  background-color: var(--primary-color);
 }
 
 header {
-  background-color: var(--primary-color);
-  color: white;
   padding: 1em;
 }
 
 nav a {
-  color: white;
   text-decoration: none;
   margin-right: 1em;
 }
@@ -35,4 +59,82 @@ footer {
   background: #f4f4f4;
   text-align: center;
   padding: 1em;
+}
+
+.btn {
+  all: unset;
+}
+
+.btn:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main-header {
+  width: 60%;
+  height: 85px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header .logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.main-header > nav {
+  display: flex;
+  gap: 20px;
+
+  font-size: 18px;
+}
+
+#main {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  height: 800px;
+
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url(../assets/babylon_ruins_hillah_iraq_homo_cosmicos.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.8);
+}
+
+.hero-content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  color: white;
+}
+
+.hero h1 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.hero p {
+  font-weight: 700;
+  font-size: 4rem;
+
+  width: 50%;
+  text-align: center;
 }
