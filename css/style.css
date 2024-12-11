@@ -72,11 +72,6 @@ footer {
 }
 
 .main-header {
-  position: sticky;
-  top: 0;
-
-  z-index: 1000;
-
   width: 60%;
   height: 85px;
   margin: 0 auto;
@@ -110,30 +105,52 @@ footer {
 .hero {
   height: 820px;
   position: relative;
+  overflow: hidden; /* Prevent overflowing images */
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
+.hero-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
   height: 100%;
+  width: calc(100vw * 3);
+}
+
+.hero-slide {
+  flex: 0 0 100vw;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(0.7);
+}
+
+.slide-1 {
   background-image: url(../assets/babylon_ruins_hillah_iraq_homo_cosmicos.jpg);
   background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: brightness(0.8);
+}
+
+.slide-2 {
+  background-image: url(../assets/imam_husayn.jpg);
+  background-position: center;
+}
+
+.slide-3 {
+  background-image: url(../assets/erbil_castle.jpg);
+  background-position: center bottom;
 }
 
 .hero-content {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  height: 100%;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -145,11 +162,32 @@ footer {
 .hero p {
   font-weight: 700;
   font-size: 4rem;
-
   width: 800px;
   text-align: center;
   color: white;
 }
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.left-btn {
+  left: 10px;
+}
+
+.right-btn {
+  right: 10px;
+}
+
 
 .places {
   display: flex;
@@ -192,7 +230,7 @@ footer {
 }
 
 .cards .card {
-  height: 550px;
+  height: 600px;
   width: 450px;
 
   box-shadow: 0px 7px 29px 0px rgba(100,100,111,0.2);
@@ -212,29 +250,23 @@ footer {
   -moz-box-shadow: 0px 9px 35px 0px rgba(100,100,111,0.3);
 }
 
-.card .name {
-  padding: 0px 40px;
-
-  font-weight: 500;
-  font-size: 1.4rem;
-}
-
-.details-cont{
-  padding: 0px 40px;
-  margin-top: auto;
-  margin-bottom: 2em;
+.card > img {
+  height: 300px;
 }
 
 .card .details {
   display: flex;
   justify-content: space-between;
+  padding: 0px 40px;
+}
 
-  margin-top: 30px;
+.details .location {
+  font-size: 1.1rem;
 }
 
 .details > div {
   display: flex;
-  gap: 16px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
 }
@@ -242,3 +274,38 @@ footer {
 .rating > span {
   font-size: 18px;
 }
+
+
+.card .name {
+  padding: 0px 40px;
+
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.details-cont{
+  padding: 0px 40px;
+  /* margin-top: auto; */
+  margin-bottom: 2rem;
+}
+
+.details-cont .time {
+  text-align: center;
+
+  display: flex;
+  gap: 10px;
+}
+
+.time-and-tourists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.tourists{
+  display: flex;
+  gap: 10px;
+}
+

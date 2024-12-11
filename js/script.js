@@ -16,11 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			main.innerHTML = content;
 			document.title =
-				page.charAt(0).toUpperCase() + page.slice(1) + " - My App";
+				page.charAt(0).toUpperCase() + page.slice(1) + " - TRAVELER";
 
 			// Update the active link
 			highlightActiveLink(page, navLinks);
-			if (page.toLowerCase() === "home") loadCards();
+			if (page.toLowerCase() === "home") {
+				loadSlider();
+				loadCards();
+			}
 		} catch (error) {
 			main.innerHTML = "<h1>404 - Page Not Found</h1>";
 			console.error(error);
@@ -75,37 +78,84 @@ const loadCards = () => {
 	places.forEach((place) => {
 		const newA = document.createElement("a");
 		newA.innerHTML = `
-				<div class="card">
-					<img
-						src="${place.image}"
-						alt="${place.name}"
-					/>
-					<p class="name">${place.name}</p>
-					<div class="details-cont">
-						<hr
-							style="
-								height: 1px;
-								border: none;
-								color: #333;
-								background-color: #ccc;
-							"
-						/>
-						<div class="details">
-							<div class="location">
-								<img src="../assets/location-dot-solid.svg" />
-								<span>${place.location}</span>
-							</div>
+			<div class="card">
+				<img src="${place.image}" />
+				<div class="details">
+					<div class="location">
+						<img src="../assets/location-dot-solid.svg" />
+						<span>${place.location}</span>
+					</div>
 
-							<div class="rating">
-								<img src="../assets/star-solid.svg" />
-								<span>${place.rating}</span>
+					<div class="rating">
+						<img src="../assets/star-solid.svg" />
+						<span>${place.rating}</span>
+					</div>
+				</div>
+				<p class="name">${place.name}</p>
+				<hr
+					style="
+						height: 1px;
+						border: none;
+						color: #333;
+						background-color: #ccc;
+						margin: 0 40px;
+						margin-top: auto;
+					"
+				/>
+				<div class="details-cont">
+					<div class="time-and-tourists">
+						<div class="time">
+							<img src="../assets/clock-solid.svg" />
+							<div>
+							${
+								place.alwaysOpen
+									? "24 hours"
+									: `
+								Open <span class="pc-text">${place.openTime}</span><br />
+								Close <span class="pc-text">${place.closeTime}</span>
+								`
+							}
 							</div>
+						</div>
+
+						<div class="tourists">
+							<img src="../assets/users-solid.svg" />
+							<span>${place.touristsNum}</span>
 						</div>
 					</div>
 				</div>
+			</div>
 			`;
 		newA.href = place.name;
 
 		cardsContainer.appendChild(newA);
+	});
+};
+
+const loadSlider = () => {
+	const slider = document.querySelector(".hero-slider");
+	const slides = document.querySelectorAll(".hero-slide");
+	const leftBtn = document.querySelector(".left-btn");
+	const rightBtn = document.querySelector(".right-btn");
+
+	let currentIndex = 0;
+	const totalSlides = slides.length;
+
+	// Helper function to update the slider position
+	const updateSlider = () => {
+		const offset = -currentIndex * 100; // Each slide is 100vw
+		slider.style.transform = `translateX(${offset}vw)`;
+	};
+
+	// Right button click handler
+	rightBtn.addEventListener("click", () => {
+		currentIndex = (currentIndex + 1) % totalSlides; // Move to the next slide, loop back to the first
+		updateSlider();
+	});
+
+	// Left button click handler
+	leftBtn.addEventListener("click", () => {
+		currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Move to the previous slide, loop back to the last
+		updateSlider();
 	});
 };
