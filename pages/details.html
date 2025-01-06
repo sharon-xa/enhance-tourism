@@ -34,6 +34,20 @@
 					<img src="../assets/arrow-left-solid.svg" alt="go back" />
 				</button>
 
+				<!-- Gallery Section -->
+				<section class="gallery">
+					<!-- Large Image Display -->
+					<div class="gallery__big-image">
+						<img id="big-image" src="" alt="Big Display" />
+					</div>
+
+					<!-- Thumbnails -->
+					<div
+						id="thumbnail-container"
+						class="gallery__thumbnails"
+					></div>
+				</section>
+
 				<div class="two_section_group">
 					<!-- Information Box -->
 					<section class="info">
@@ -42,22 +56,6 @@
 						<ul class="place_list_of_info"></ul>
 					</section>
 
-					<!-- Gallery Section -->
-					<section class="gallery">
-						<!-- Large Image Display -->
-						<div class="gallery__big-image">
-							<img id="big-image" src="" alt="Big Display" />
-						</div>
-
-						<!-- Thumbnails -->
-						<div
-							id="thumbnail-container"
-							class="gallery__thumbnails"
-						></div>
-					</section>
-				</div>
-
-				<div class="two_section_group">
 					<!-- Location Section -->
 					<section class="details_location">
 						<!-- <h2>Location</h2> -->
@@ -69,7 +67,9 @@
 						>
 						</iframe> -->
 					</section>
+				</div>
 
+				<div class="two_section_group">
 					<!-- Rating and Reviews Section -->
 					<section class="reviews">
 						<h2>Ratings and Reviews</h2>
@@ -92,49 +92,48 @@
 							</div> -->
 						</div>
 					</section>
+					<!-- Review Form Section -->
+					<section class="review-form-container">
+						<h2>Leave a Review</h2>
+						<div class="review-form">
+							<form id="reviewForm">
+								<label for="name">Your Name</label>
+								<input
+									type="text"
+									id="name"
+									name="name"
+									placeholder="Enter your name"
+									required
+								/>
+
+								<label for="rating">Your Rating</label>
+								<select id="rating" name="rating" required>
+									<option value="" disabled selected>
+										Choose rating
+									</option>
+									<option value="5">★★★★★</option>
+									<option value="4">★★★★☆</option>
+									<option value="3">★★★☆☆</option>
+									<option value="2">★★☆☆☆</option>
+									<option value="1">★☆☆☆☆</option>
+								</select>
+
+								<label for="comment">Your Review</label>
+								<textarea
+									id="comment"
+									name="comment"
+									rows="4"
+									placeholder="Write your review here..."
+									required
+								></textarea>
+
+								<button type="submit" class="submit-btn">
+									Submit Review
+								</button>
+							</form>
+						</div>
+					</section>
 				</div>
-
-				<!-- Review Form Section -->
-				<section class="review-form-container">
-					<h2>Leave a Review</h2>
-					<div class="review-form">
-						<form id="reviewForm">
-							<label for="name">Your Name</label>
-							<input
-								type="text"
-								id="name"
-								name="name"
-								placeholder="Enter your name"
-								required
-							/>
-
-							<label for="rating">Your Rating</label>
-							<select id="rating" name="rating" required>
-								<option value="" disabled selected>
-									Choose rating
-								</option>
-								<option value="5">★★★★★</option>
-								<option value="4">★★★★☆</option>
-								<option value="3">★★★☆☆</option>
-								<option value="2">★★☆☆☆</option>
-								<option value="1">★☆☆☆☆</option>
-							</select>
-
-							<label for="comment">Your Review</label>
-							<textarea
-								id="comment"
-								name="comment"
-								rows="4"
-								placeholder="Write your review here..."
-								required
-							></textarea>
-
-							<button type="submit" class="submit-btn">
-								Submit Review
-							</button>
-						</form>
-					</div>
-				</section>
 			</div>
 		</main>
 
