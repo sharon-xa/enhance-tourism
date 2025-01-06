@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<title>Enhance Tourism</title>
+	</head>
+
+	<body>
+		<!-- Header -->
+		<header class="main-header">
+			<div class="logo">
+				TRAVEL<span class="pc-text navlink">ER</span>
+			</div>
+			<nav>
+				<a href="/" data-page="home" class="navlink">Home</a>
+				<a href="/pages/search.html" data-page="search" class="navlink">
+					Search
+				</a>
+				<a href="/pages/about.html" data-page="about" class="navlink">
+					About Us
+				</a>
+				<a href="/pages/login.html" data-page="login" class="navlink">
+					Login
+				</a>
+			</nav>
+		</header>
+
+		<!-- Main Content -->
+		<main>
+			<div class="details-page">
+				<button class="go_back_btn">
+					<img src="../assets/arrow-left-solid.svg" alt="go back" />
+				</button>
+
+				<div class="two_section_group">
+					<!-- Information Box -->
+					<section class="info">
+						<h2 class="place_name"></h2>
+						<p class="place_description"></p>
+						<ul class="place_list_of_info"></ul>
+					</section>
+
+					<!-- Gallery Section -->
+					<section class="gallery">
+						<!-- Large Image Display -->
+						<div class="gallery__big-image">
+							<img id="big-image" src="" alt="Big Display" />
+						</div>
+
+						<!-- Thumbnails -->
+						<div
+							id="thumbnail-container"
+							class="gallery__thumbnails"
+						></div>
+					</section>
+				</div>
+
+				<div class="two_section_group">
+					<!-- Location Section -->
+					<section class="details_location">
+						<!-- <h2>Location</h2> -->
+						<!-- <iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200.1116332005802!2d44.44638941779097!3d36.631534313026876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400683ae4e1fd4ef%3A0xbf9021078d801a9d!2sGeli%20Ali%20Bag%20Waterfall!5e0!3m2!1sen!2siq!4v1736181398682!5m2!1sen!2siq"
+							allowfullscreen=""
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+						>
+						</iframe> -->
+					</section>
+
+					<!-- Rating and Reviews Section -->
+					<section class="reviews">
+						<h2>Ratings and Reviews</h2>
+						<div class="reviews_container">
+							<!-- <div class="review">
+								<p>
+									<strong>John Doe:</strong> An absolutely
+									stunning place! Highly recommend visiting
+									early in the morning.
+									<span class="rating">★★★★★</span>
+								</p>
+							</div>
+							<div class="review">
+								<p>
+									<strong>Jane Smith:</strong> Beautiful
+									waterfall but can get crowded on weekends.
+									Still worth the trip!
+									<span class="rating">★★★★☆</span>
+								</p>
+							</div> -->
+						</div>
+					</section>
+				</div>
+
+				<!-- Review Form Section -->
+				<section class="review-form-container">
+					<h2>Leave a Review</h2>
+					<div class="review-form">
+						<form id="reviewForm">
+							<label for="name">Your Name</label>
+							<input
+								type="text"
+								id="name"
+								name="name"
+								placeholder="Enter your name"
+								required
+							/>
+
+							<label for="rating">Your Rating</label>
+							<select id="rating" name="rating" required>
+								<option value="" disabled selected>
+									Choose rating
+								</option>
+								<option value="5">★★★★★</option>
+								<option value="4">★★★★☆</option>
+								<option value="3">★★★☆☆</option>
+								<option value="2">★★☆☆☆</option>
+								<option value="1">★☆☆☆☆</option>
+							</select>
+
+							<label for="comment">Your Review</label>
+							<textarea
+								id="comment"
+								name="comment"
+								rows="4"
+								placeholder="Write your review here..."
+								required
+							></textarea>
+
+							<button type="submit" class="submit-btn">
+								Submit Review
+							</button>
+						</form>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<footer>
+			<p>&copy; 2025 Tourist Guide. All rights reserved.</p>
+		</footer>
+
+		<script src="../js/details.js" type="module"></script>
+	</body>
+</html>

@@ -13,13 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
 				throw new Error(`Page not found: ${page}`);
 			}
 			const content = await response.text();
-
 			main.innerHTML = content;
 			document.title =
 				page.charAt(0).toUpperCase() + page.slice(1) + " - TRAVELER";
 
-			// Update the active link
 			highlightActiveLink(page, navLinks);
+
 			if (page.toLowerCase() === "home") {
 				loadSlider();
 				loadCards();
@@ -77,6 +76,7 @@ const loadCards = () => {
 
 	places.forEach((place) => {
 		const newA = document.createElement("a");
+		newA.dataset.name = place.name;
 		newA.innerHTML = `
 			<div class="card">
 				<img src="${place.image}" />
@@ -126,8 +126,7 @@ const loadCards = () => {
 				</div>
 			</div>
 			`;
-		newA.href = place.name;
-
+		newA.href = `/pages/details.html?name=${place.name}`;
 		cardsContainer.appendChild(newA);
 	});
 };
