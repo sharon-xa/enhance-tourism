@@ -34,6 +34,7 @@ const populatePlaceDetails = (place) => {
 		place.alwaysOpen ? "24/7" : `${place.openTime} - ${place.closeTime}`
 	}</li>
     <li><strong>Rating:</strong> ${place.rating}</li>
+    <li><strong>Price of Entrance:</strong> ${place.PriceOfEntrance}</li>
   `;
 
 	// Populate gallery

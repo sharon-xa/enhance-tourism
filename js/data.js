@@ -7,6 +7,7 @@ export const places = [
 		rating: 4.5,
 		alwaysOpen: true,
 		touristsNum: "6M",
+		PriceOfEntrance: "Free",
 		reviews: [
 			{
 				user: "John Doe",
