@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const populatePlaceDetails = (place) => {
 	// Populate information section
-	document.querySelector(".place_name").textContent = place.name;
+	document.querySelectorAll(".place_name").forEach((placeName) => {
+		placeName.textContent = place.name;
+	});
 	document.querySelector(".place_description").textContent =
 		place.description;
 	document.querySelector(".place_list_of_info").innerHTML = `
