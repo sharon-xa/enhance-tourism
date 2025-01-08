@@ -75,32 +75,15 @@ const populatePlaceDetails = (place) => {
 
 // Function to populate the gallery dynamically
 function populateGallery(images) {
-	const bigImage = document.getElementById("big-image");
-	const thumbnailContainer = document.getElementById("thumbnail-container");
+	const simpleGallery = document.getElementById("simple-gallery");
 
-	// Set the initial big image
-	if (images.length > 0) {
-		bigImage.src = images[0];
-	}
+	// Populate all images
+	images.forEach((image) => {
+		const imgElement = document.createElement("img");
+		imgElement.src = image;
+		imgElement.alt = "Gallery Image";
 
-	// Populate thumbnails
-	images.forEach((image, index) => {
-		const thumbnail = document.createElement("img");
-		thumbnail.src = image;
-		thumbnail.classList.add("thumbnail");
-		if (index === 0) thumbnail.classList.add("active");
-
-		thumbnail.addEventListener("click", () => {
-			bigImage.src = image;
-
-			document
-				.querySelectorAll(".thumbnail")
-				.forEach((thumb) => thumb.classList.remove("active"));
-
-			thumbnail.classList.add("active");
-		});
-
-		thumbnailContainer.appendChild(thumbnail);
+		simpleGallery.appendChild(imgElement);
 	});
 }
 

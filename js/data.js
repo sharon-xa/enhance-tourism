@@ -28,6 +28,8 @@ export const places = [
 			"../assets/places/geli_ali_beg.jpg",
 			"../assets/places/geli_ali_beg_view_1.jpg",
 			"../assets/places/geli_ali_beg_view_2.jpeg",
+			"../assets/places/geli_ali_beg_view_2.jpeg",
+			// "../assets/places/geli_ali_beg_view_2.jpeg",
 		],
 		mapEmbedUrl:
 			"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200.1116332005802!2d44.44638941779097!3d36.631534313026876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400683ae4e1fd4ef%3A0xbf9021078d801a9d!2sGeli%20Ali%20Bag%20Waterfall!5e0!3m2!1sen!2siq!4v1736181398682!5m2!1sen!2siq",
