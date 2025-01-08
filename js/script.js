@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		loadContent(page);
 	});
 
-	// Load the initial page
+	// Load the home page
 	let initialPage;
 	if (location.pathname === "/" || location.pathname === "/index.html") {
 		initialPage = "home";
@@ -86,12 +86,20 @@ const loadCards = () => {
 						<span>${place.location}</span>
 					</div>
 
+					<div class="price">
+						<img src="../assets/dollar-sign-solid.svg" />
+						<span>${place.PriceOfEntrance}</span>
+					</div>
+
 					<div class="rating">
 						<img src="../assets/star-solid.svg" />
 						<span>${place.rating}</span>
 					</div>
 				</div>
-				<p class="name">${place.name}</p>
+				<div class="name-and-description">
+					<h3 class="name">${place.name}</h3>
+					<p class="description">${place.description}</p>
+				</div>
 				<hr
 					style="
 						height: 1px;

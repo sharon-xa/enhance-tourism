@@ -4,6 +4,8 @@ export const places = [
 		image: "../assets/places/geli_ali_beg.jpg",
 		location: "Erbil",
 		description: "A stunning natural waterfall located near Erbil.",
+		detaildDescription:
+			"Geli Ali Beg Waterfall is a stunning natural waterfall located near Erbil. The waterfall is surrounded by lush greenery and is a popular spot for locals and tourists alike. The waterfall is a great place to relax and enjoy the beauty of nature. The waterfall is also a great spot for photography, with many beautiful views to capture. The waterfall is a must-visit destination for anyone visiting Erbil.",
 		rating: 4.5,
 		alwaysOpen: true,
 		touristsNum: "6M",
@@ -33,18 +35,10 @@ export const places = [
 	{
 		name: "Ahwar of Southern Iraq",
 		image: "../assets/places/ahwar.jpg",
-		location: "Dhi Qar Governorate",
+		location: "Dhi Qar",
 		rating: "4.4",
 		alwaysOpen: true,
 		touristsNum: "3K",
-	},
-	{
-		name: "Ash-Shinafiyah",
-		image: "../assets/places/ash_shinafiyah.jpg",
-		location: "Al-Qādisiyyah Governorate",
-		rating: "4.6",
-		alwaysOpen: true,
-		touristsNum: "20K",
 	},
 	{
 		name: "Virgin Mary's Chaldean Catholic Church",
@@ -66,7 +60,7 @@ export const places = [
 	{
 		name: "Malwiya Mosque",
 		image: "../assets/places/malwiya.jpg",
-		location: "Saladin, Samarra",
+		location: "Saladin",
 		rating: "4.4",
 		openTime: "09:00 AM",
 		closeTime: "05:00 PM",
