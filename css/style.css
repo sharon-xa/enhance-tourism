@@ -347,7 +347,12 @@ footer {
   gap: 5px;
 
   font-size: 1.2rem;
+  line-height: 1.1;
   font-weight: 500;
+}
+
+.rating > img {
+  align-self: flex-start;
 }
 
 .details-cont > .price {
