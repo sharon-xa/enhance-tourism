@@ -9,7 +9,7 @@ export const places = [
 		rating: 4.5,
 		alwaysOpen: true,
 		touristsNum: "6M",
-		PriceOfEntrance: "Free",
+		PriceOfEntrance: 0,
 		reviews: [
 			{
 				user: "John Doe",
@@ -38,9 +38,36 @@ export const places = [
 		name: "Ahwar of Southern Iraq",
 		image: "../assets/places/ahwar.jpg",
 		location: "Dhi Qar",
-		rating: "4.4",
+		description:
+			"A UNESCO World Heritage Site, known for its vast marshlands and biodiversity.",
+		detaildDescription:
+			"The Ahwar of Southern Iraq, also known as the Mesopotamian Marshes, is a breathtaking UNESCO World Heritage Site. It features vast marshlands, rich biodiversity, and significant cultural history. These wetlands are home to numerous bird species, lush vegetation, and a way of life that has been preserved for millennia. Visitors can explore the marshes by boat, witness traditional reed houses, and enjoy the serene beauty of this natural wonder. The Ahwar holds great historical significance as the ancient landscape of the Sumerians and is a must-visit destination for nature lovers and history enthusiasts.",
+		rating: 4.7,
 		alwaysOpen: true,
-		touristsNum: "3K",
+		touristsNum: "2M",
+		PriceOfEntrance: 5, // Assuming an entrance fee, you can set it to 0 if free
+		reviews: [
+			{
+				user: "Ali Hassan",
+				rating: 5,
+				comment:
+					"A serene and magical place. The boat ride through the marshes is unforgettable!",
+			},
+			{
+				user: "Sarah Ahmed",
+				rating: 4,
+				comment:
+					"A unique destination with incredible wildlife. However, the facilities could be improved.",
+			},
+		],
+		gallery: [
+			"../assets/places/ahwar.jpg",
+			"../assets/places/ahwar.jpg",
+			"../assets/places/ahwar.jpg",
+			"../assets/places/ahwar.jpg",
+		],
+		mapEmbedUrl:
+			"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38702.60591390331!2d47.010594295787435!3d30.97440399917129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fdd1d08fa72f82d%3A0x8e134bee032912d7!2z2YXZhtiq2KzYuSDYp9mE2KPZh9mI2KfYsdmKINin2YTYs9mK2KfYrdmK!5e0!3m2!1sen!2siq!4v1736460633881!5m2!1sen!2siq",
 	},
 	{
 		name: "Virgin Mary's Chaldean Catholic Church",

@@ -86,49 +86,49 @@ const loadCards = () => {
 						<span>${place.location}</span>
 					</div>
 
-					<div class="price">
-						<img src="../assets/dollar-sign-solid.svg" />
-						<span>${place.PriceOfEntrance}</span>
+					<div class="time">
+						<img src="../assets/clock-solid.svg" />
+						<span>${
+							place.alwaysOpen
+								? "24 hours"
+								: `<span>${place.openTime}</span> - <span>${place.closeTime}</span>`
+						}
+						</span>
 					</div>
 
-					<div class="rating">
-						<img src="../assets/star-solid.svg" />
-						<span>${place.rating}</span>
+					<div class="tourists">
+						<img src="../assets/users-solid.svg" />
+						<span>${place.touristsNum}</span>
 					</div>
 				</div>
 				<div class="name-and-description">
 					<h3 class="name">${place.name}</h3>
 					<p class="description">${place.description}</p>
 				</div>
-				<hr
-					style="
-						height: 1px;
-						border: none;
-						color: #333;
-						background-color: #ccc;
-						margin: 0 40px;
-						margin-top: auto;
-					"
-				/>
-				<div class="details-cont">
-					<div class="time-and-tourists">
-						<div class="time">
-							<img src="../assets/clock-solid.svg" />
-							<div>
-							${
-								place.alwaysOpen
-									? "24 hours"
-									: `
-								Open <span class="pc-text">${place.openTime}</span><br />
-								Close <span class="pc-text">${place.closeTime}</span>
-								`
-							}
-							</div>
+				<div class="bottom">
+					<hr
+						style="
+							height: 1px;
+							width: 100%;
+							border: none;
+							color: #333;
+							background-color: #ccc;
+							padding: 0 40px;
+						"
+					/>
+
+					<div class="details-cont">
+						<div class="rating">
+							<img src="../assets/star-solid.svg" />
+							<span>${place.rating}</span>
 						</div>
 
-						<div class="tourists">
-							<img src="../assets/users-solid.svg" />
-							<span>${place.touristsNum}</span>
+						<div class="price">
+							<span>${
+								place.PriceOfEntrance === 0
+									? "Free"
+									: `$${place.PriceOfEntrance}`
+							}</span>
 						</div>
 					</div>
 				</div>
