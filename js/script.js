@@ -91,7 +91,9 @@ const loadCards = () => {
 						<span>${
 							place.alwaysOpen
 								? "24 hours"
-								: `<span>${place.openTime}</span> - <span>${place.closeTime}</span>`
+								: `<span>${place.openTime}</span>
+								<br>
+								<span>${place.closeTime}</span>`
 						}
 						</span>
 					</div>

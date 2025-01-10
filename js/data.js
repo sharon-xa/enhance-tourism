@@ -70,14 +70,6 @@ export const places = [
 			"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38702.60591390331!2d47.010594295787435!3d30.97440399917129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fdd1d08fa72f82d%3A0x8e134bee032912d7!2z2YXZhtiq2KzYuSDYp9mE2KPZh9mI2KfYsdmKINin2YTYs9mK2KfYrdmK!5e0!3m2!1sen!2siq!4v1736460633881!5m2!1sen!2siq",
 	},
 	{
-		name: "Virgin Mary's Chaldean Catholic Church",
-		image: "../assets/places/virgin_mary_church.jpg",
-		location: "Baghdad",
-		rating: "4.6",
-		alwaysOpen: true,
-		touristsNum: "5K",
-	},
-	{
 		name: "Erbil Castle",
 		image: "../assets/places/erbil_castle_card.jpg",
 		location: "Erbil",
@@ -85,6 +77,14 @@ export const places = [
 		openTime: "09:00 AM",
 		closeTime: "07:00 PM",
 		touristsNum: "1.75M",
+	},
+	{
+		name: "Virgin Mary's Chaldean Catholic Church",
+		image: "../assets/places/virgin_mary_church.jpg",
+		location: "Baghdad",
+		rating: "4.6",
+		alwaysOpen: true,
+		touristsNum: "5K",
 	},
 	{
 		name: "Malwiya Mosque",
