@@ -13,10 +13,24 @@
 			<div class="logo">
 				TRAVEL<span class="pc-text navlink">ER</span>
 			</div>
+
+			<!-- search bar -->
+			<form action="/pages/search.html" method="GET" class="search-form">
+				<input
+					type="search"
+					name="search"
+					id="search"
+					placeholder="Search..."
+				/>
+				<button type="submit">
+					<img src="assets/search-solid.svg" alt="search" />
+				</button>
+			</form>
+
 			<nav>
 				<a href="/" data-page="home" class="navlink">Home</a>
-				<a href="/pages/search.html" data-page="search" class="navlink">
-					Search
+				<a href="/pages/places.html" data-page="places" class="navlink">
+					Places
 				</a>
 				<a href="/pages/about.html" data-page="about" class="navlink">
 					About Us

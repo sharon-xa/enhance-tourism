@@ -10,6 +10,7 @@ export const places = [
 		alwaysOpen: true,
 		touristsNum: "6M",
 		PriceOfEntrance: 0,
+		category: "natural",
 		reviews: [
 			{
 				user: "John Doe",
