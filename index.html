@@ -4,52 +4,44 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/style.css" />
-		<title>Enhance Tourism</title>
+		<title>Enhance Tourism - HOME</title>
+		<script type="module" src="js/script.js" defer></script>
+		<script type="module" src="js/home.js" defer></script>
 	</head>
 
 	<body>
-		<!-- Header -->
-		<header class="main-header">
-			<div class="logo">
-				TRAVEL<span class="pc-text navlink">ER</span>
-			</div>
-
-			<!-- search bar -->
-			<form action="/pages/search.html" method="GET" class="search-form">
-				<input
-					type="search"
-					name="search"
-					id="search"
-					placeholder="Search..."
-				/>
-				<button type="submit">
-					<img src="assets/search-solid.svg" alt="search" />
+		<main id="main">
+			<section class="hero">
+				<div class="hero-slider">
+					<div class="hero-slide slide-1"></div>
+					<div class="hero-slide slide-2"></div>
+					<div class="hero-slide slide-3"></div>
+				</div>
+				<div class="hero-content">
+					<h1>TOURS & TRAVEL IN IRAQ</h1>
+					<p>Let's Discover Iraq's Culture and Civilizations</p>
+				</div>
+				<button class="slider-btn left-btn">
+					<img
+						src="../assets/arrow-left-solid-white.svg"
+						alt="left"
+						loading="lazy"
+					/>
 				</button>
-			</form>
+				<button class="slider-btn right-btn">
+					<img
+						src="../assets/arrow-right-solid-white.svg"
+						alt="right"
+						loading="lazy"
+					/>
+				</button>
+			</section>
 
-			<nav>
-				<a href="/" data-page="home" class="navlink">Home</a>
-				<a href="/pages/places.html" data-page="places" class="navlink">
-					Places
-				</a>
-				<a href="/pages/about.html" data-page="about" class="navlink">
-					About Us
-				</a>
-				<a href="/pages/login.html" data-page="login" class="navlink">
-					Login
-				</a>
-			</nav>
-		</header>
-
-		<!-- Main Container -->
-		<main id="main"></main>
-
-		<!-- Footer -->
-		<footer>
-			<p>&copy; 2025 Tourist Guide. All rights reserved.</p>
-		</footer>
-
-		<!-- Script -->
-		<script type="module" src="js/script.js" defer></script>
+			<section class="places">
+				<p>Places</p>
+				<h2>Perfect Tour Places</h2>
+				<div class="cards-container"></div>
+			</section>
+		</main>
 	</body>
 </html>

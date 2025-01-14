@@ -47,6 +47,7 @@ export const places = [
 		alwaysOpen: true,
 		touristsNum: "2M",
 		PriceOfEntrance: 5, // Assuming an entrance fee, you can set it to 0 if free
+		category: "natural",
 		reviews: [
 			{
 				user: "Ali Hassan",
@@ -78,6 +79,7 @@ export const places = [
 		openTime: "09:00 AM",
 		closeTime: "07:00 PM",
 		touristsNum: "1.75M",
+		category: "historical",
 	},
 	{
 		name: "Virgin Mary's Chaldean Catholic Church",
@@ -86,6 +88,7 @@ export const places = [
 		rating: "4.6",
 		alwaysOpen: true,
 		touristsNum: "5K",
+		category: "religious",
 	},
 	{
 		name: "Malwiya Mosque",
@@ -95,6 +98,7 @@ export const places = [
 		openTime: "09:00 AM",
 		closeTime: "05:00 PM",
 		touristsNum: "8K",
+		category: "historical",
 	},
 	{
 		name: "Ancient Babylon",
@@ -104,6 +108,7 @@ export const places = [
 		openTime: "09:00 AM",
 		closeTime: "09:30 PM",
 		touristsNum: "25.7K",
+		category: "historical",
 	},
 	{
 		name: "Abu Hanifa Mosque",
@@ -112,6 +117,7 @@ export const places = [
 		rating: "4.4",
 		alwaysOpen: true,
 		touristsNum: "2K",
+		category: "religious",
 	},
 	{
 		name: "Imam Ali Holy Shrine",
@@ -120,5 +126,6 @@ export const places = [
 		rating: "4.8",
 		alwaysOpen: true,
 		touristsNum: "18M",
+		category: "religious",
 	},
 ];

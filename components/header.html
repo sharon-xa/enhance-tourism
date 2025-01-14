@@ -1,0 +1,55 @@
+<!-- Header -->
+<header class="main-header">
+	<div class="logo">TRAVEL<span class="pc-text navlink">ER</span></div>
+
+	<!-- search bar -->
+
+	<nav>
+		<a href="/" data-page="home" class="navlink">Home</a>
+		<div class="dropdown">
+			<span class="navlink dropdown-toggle"> Places &dtrif; </span>
+			<div class="dropdown-menu">
+				<a
+					href="/pages/places.html?type=natural"
+					data-page="natural"
+					class="dropdown-item"
+				>
+					Natural Attractions
+				</a>
+				<a
+					href="/pages/places.html?type=historical"
+					class="dropdown-item"
+					data-page="historical"
+				>
+					Historical Landmarks
+				</a>
+				<a
+					href="/pages/places.html?type=religious"
+					class="dropdown-item"
+					data-page="religious"
+				>
+					Religious Sites
+				</a>
+			</div>
+		</div>
+		<a href="/pages/about.html" data-page="about" class="navlink">
+			About Us
+		</a>
+		<a href="/pages/login.html" data-page="login" class="navlink">
+			Login
+		</a>
+	</nav>
+
+	<form action="/pages/search.html" role="search" class="search-form">
+		<input
+			id="search"
+			type="search"
+			placeholder="Search places..."
+			autofocus
+			required
+		/>
+		<button type="submit">
+			<img src="../assets/search.svg" alt="" loading="lazy" />
+		</button>
+	</form>
+</header>

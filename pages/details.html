@@ -5,71 +5,53 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../css/style.css" />
 		<title>Enhance Tourism</title>
+		<script src="../js/script.js" defer type="module"></script>
+		<script src="../js/details.js" defer type="module"></script>
 	</head>
 
 	<body>
-		<!-- Header -->
-		<header class="main-header">
-			<div class="logo">
-				TRAVEL<span class="pc-text navlink">ER</span>
+		<main id="details-container" class="details-page">
+			<div class="details-header">
+				<button class="go_back_btn">
+					<img
+						src="../assets/arrow-left-solid.svg"
+						alt="go back"
+						loading="lazy"
+					/>
+				</button>
+				<h1 class="place_name"></h1>
 			</div>
-			<nav>
-				<a href="/" data-page="home" class="navlink">Home</a>
-				<a href="/pages/search.html" data-page="search" class="navlink">
-					Search
-				</a>
-				<a href="/pages/about.html" data-page="about" class="navlink">
-					About Us
-				</a>
-				<a href="/pages/login.html" data-page="login" class="navlink">
-					Login
-				</a>
-			</nav>
-		</header>
 
-		<!-- Main Content -->
-		<main>
-			<div class="details-page">
-				<div class="details-header">
-					<button class="go_back_btn">
-						<img
-							src="../assets/arrow-left-solid.svg"
-							alt="go back"
-						/>
-					</button>
-					<h1 class="place_name"></h1>
-				</div>
+			<!-- Gallery Section -->
+			<section class="simple-gallery" id="simple-gallery"></section>
 
-				<!-- Gallery Section -->
-				<section class="simple-gallery" id="simple-gallery"></section>
+			<div class="two_section_group">
+				<!-- Information Box -->
+				<section class="info">
+					<h2 class="place_name"></h2>
+					<p class="place_description"></p>
+					<ul class="place_list_of_info"></ul>
+				</section>
 
-				<div class="two_section_group">
-					<!-- Information Box -->
-					<section class="info">
-						<h2 class="place_name"></h2>
-						<p class="place_description"></p>
-						<ul class="place_list_of_info"></ul>
-					</section>
-
-					<!-- Location Section -->
-					<section class="details_location">
-						<!-- <h2>Location</h2> -->
-						<!-- <iframe
+				<!-- Location Section -->
+				<section class="details_location">
+					<!-- <h2>Location</h2> -->
+					<!-- <iframe
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200.1116332005802!2d44.44638941779097!3d36.631534313026876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400683ae4e1fd4ef%3A0xbf9021078d801a9d!2sGeli%20Ali%20Bag%20Waterfall!5e0!3m2!1sen!2siq!4v1736181398682!5m2!1sen!2siq"
 							allowfullscreen=""
 							loading="lazy"
 							referrerpolicy="no-referrer-when-downgrade"
 						>
 						</iframe> -->
-					</section>
-				</div>
+				</section>
+			</div>
 
-				<div class="two_section_group">
-					<!-- Rating and Reviews Section -->
-					<section class="reviews">
-						<h2>Ratings and Reviews</h2>
-						<div class="reviews_container">
-							<!-- <div class="review">
+			<div class="two_section_group">
+				<!-- Rating and Reviews Section -->
+				<section class="reviews">
+					<h2>Ratings and Reviews</h2>
+					<div class="reviews_container">
+						<!-- <div class="review">
 								<p>
 									<strong>John Doe:</strong> An absolutely
 									stunning place! Highly recommend visiting
@@ -85,58 +67,50 @@
 									<span class="rating">★★★★☆</span>
 								</p>
 							</div> -->
-						</div>
-					</section>
-					<!-- Review Form Section -->
-					<section class="review-form-container">
-						<h2>Leave a Review</h2>
-						<div class="review-form">
-							<form id="reviewForm">
-								<label for="name">Your Name</label>
-								<input
-									type="text"
-									id="name"
-									name="name"
-									placeholder="Enter your name"
-									required
-								/>
+					</div>
+				</section>
+				<!-- Review Form Section -->
+				<section class="review-form-container">
+					<h2>Leave a Review</h2>
+					<div class="review-form">
+						<form id="reviewForm">
+							<label for="name">Your Name</label>
+							<input
+								type="text"
+								id="name"
+								name="name"
+								placeholder="Enter your name"
+								required
+							/>
 
-								<label for="rating">Your Rating</label>
-								<select id="rating" name="rating" required>
-									<option value="" disabled selected>
-										Choose rating
-									</option>
-									<option value="5">★★★★★</option>
-									<option value="4">★★★★☆</option>
-									<option value="3">★★★☆☆</option>
-									<option value="2">★★☆☆☆</option>
-									<option value="1">★☆☆☆☆</option>
-								</select>
+							<label for="rating">Your Rating</label>
+							<select id="rating" name="rating" required>
+								<option value="" disabled selected>
+									Choose rating
+								</option>
+								<option value="5">★★★★★</option>
+								<option value="4">★★★★☆</option>
+								<option value="3">★★★☆☆</option>
+								<option value="2">★★☆☆☆</option>
+								<option value="1">★☆☆☆☆</option>
+							</select>
 
-								<label for="comment">Your Review</label>
-								<textarea
-									id="comment"
-									name="comment"
-									rows="4"
-									placeholder="Write your review here..."
-									required
-								></textarea>
+							<label for="comment">Your Review</label>
+							<textarea
+								id="comment"
+								name="comment"
+								rows="4"
+								placeholder="Write your review here..."
+								required
+							></textarea>
 
-								<button type="submit" class="submit-btn">
-									Submit Review
-								</button>
-							</form>
-						</div>
-					</section>
-				</div>
+							<button type="submit" class="submit-btn">
+								Submit Review
+							</button>
+						</form>
+					</div>
+				</section>
 			</div>
 		</main>
-
-		<!-- Footer -->
-		<footer>
-			<p>&copy; 2025 Tourist Guide. All rights reserved.</p>
-		</footer>
-
-		<script src="../js/details.js" type="module"></script>
 	</body>
 </html>
