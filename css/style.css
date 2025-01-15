@@ -145,6 +145,7 @@ footer {
 	color: #333;
 
   border: 2px solid rgb(185, 185, 185);
+  transition: border 0.3s ease;
 }
 
 .search-form input[type="search"]:hover,
@@ -196,7 +197,7 @@ footer {
 }
 
 .dropdown-menu {
-	display: none; /* Initially hidden */
+	display: none;
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -221,7 +222,6 @@ footer {
 	color: var(--primary-color);
 }
 
-/* Show dropdown on hover */
 .dropdown:hover .dropdown-menu {
 	display: block;
 }
@@ -239,7 +239,7 @@ footer {
 
 .hero-slider {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.7s ease-in-out;
   height: 100%;
   width: calc(100vw * 3);
 }
@@ -323,6 +323,28 @@ footer {
   right: 1em;
 }
 
+.slider-indicators {
+  position: absolute;
+  bottom: 1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5em;
+  z-index: 3;
+}
+
+.slider-indicators .indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-indicators .indicator.active {
+  background-color: white;
+}
 
 .places {
   display: flex;
