@@ -547,7 +547,7 @@ footer {
   text-align: center;
 }
 
-.go_back_btn {
+.go-back-btn {
   all: unset;
   border-radius: 50%;
   padding: 10px;
@@ -604,7 +604,7 @@ footer {
   width: 40em;
 }
 
-.info .place_name {
+.info .place-name {
   font-size: 2rem;
   font-weight: bold;
   color: var(--primary-color);
@@ -614,7 +614,7 @@ footer {
   text-transform: capitalize;
 }
 
-.place_description {
+.place-description {
   font-size: 1.2rem;
   color: #333;
   line-height: 1.6;
@@ -622,7 +622,7 @@ footer {
   text-align: justify;
 }
 
-.place_list_of_info {
+.place-list-of-info {
   all: unset;
   display: flex;
   flex-direction: column;
@@ -630,7 +630,7 @@ footer {
   margin-top: 1rem;
 }
 
-.place_list_of_info > li {
+.place-list-of-info > li {
   all: unset;
   font-size: 1rem;
   color: #555;
@@ -641,18 +641,18 @@ footer {
   padding: 0.5rem 0;
 }
 
-.place_list_of_info > li strong {
+.place-list-of-info > li strong {
   color: var(--primary-color);
   font-weight: 600;
 }
 
-.place_list_of_info > li:last-child {
+.place-list-of-info > li:last-child {
   border-bottom: none;
 }
 
 
 /* Location Section */
-.details_location {
+.details-location {
   background-color: var(--light-background);
   padding: 2em;
   border-radius: 8px;
@@ -662,14 +662,14 @@ footer {
   width: 40em;
 }
 
-.details_location h2 {
+.details-location h2 {
   margin-bottom: 1em;
   font-size: 1.8rem;
   color: var(--primary-color);
   text-align: center;
 }
 
-.details_location iframe {
+.details-location iframe {
   width: 100%; /* Responsive map width */
   height: 450px;
   border: none;
@@ -687,7 +687,7 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.reviews_container{
+.reviews-container {
   display: flex;
   flex-direction: column;
 

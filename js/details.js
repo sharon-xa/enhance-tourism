@@ -24,12 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const populatePlaceDetails = (place) => {
 	// Populate information section
-	document.querySelectorAll(".place_name").forEach((placeName) => {
+	document.querySelectorAll(".place-name").forEach((placeName) => {
 		placeName.textContent = place.name;
 	});
-	document.querySelector(".place_description").textContent =
+	document.querySelector(".place-description").textContent =
 		place.description;
-	document.querySelector(".place_list_of_info").innerHTML = `
+	document.querySelector(".place-list-of-info").innerHTML = `
     <li><strong>Location:</strong> ${place.location}</li>
     <li><strong>Tourists Annually:</strong> ${place.touristsNum}</li>
     <li><strong>Open Time:</strong> ${
@@ -43,7 +43,7 @@ const populatePlaceDetails = (place) => {
 	populateGallery(place.gallery);
 
 	// populate map
-	const mapSection = document.querySelector(".details_location");
+	const mapSection = document.querySelector(".details-location");
 
 	const h2 = document.createElement("h2");
 	h2.textContent = "Location";
@@ -58,7 +58,7 @@ const populatePlaceDetails = (place) => {
 	mapSection.appendChild(iframe);
 
 	// Populate reviews
-	const reviewsContainer = document.querySelector(".reviews_container");
+	const reviewsContainer = document.querySelector(".reviews-container");
 	reviewsContainer.innerHTML = place.reviews
 		.map(
 			(review) => `
@@ -90,7 +90,7 @@ function populateGallery(images) {
 	});
 }
 
-document.querySelector(".go_back_btn").addEventListener("click", () => {
+document.querySelector(".go-back-btn").addEventListener("click", () => {
 	history.back();
 });
 
@@ -113,7 +113,7 @@ document.getElementById("reviewForm").addEventListener("submit", function (e) {
   `;
 
 	// Append the new review to the reviews section
-	const reviewsSection = document.querySelector(".reviews_container");
+	const reviewsSection = document.querySelector(".reviews-container");
 	reviewsSection.appendChild(newReview);
 
 	// Clear the form
