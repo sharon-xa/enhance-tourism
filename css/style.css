@@ -37,6 +37,17 @@ video {
 	display: block;
 }
 
+#page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+}
+
 .pc-text {
   color: var(--primary-color);  
 }
@@ -62,10 +73,6 @@ header {
 
 .active {
   color: var(--primary-color);
-}
-
-main {
-  padding: 1em;
 }
 
 footer {
@@ -224,11 +231,6 @@ footer {
 
 .dropdown:hover .dropdown-menu {
 	display: block;
-}
-
-#main {
-  margin: 0;
-  padding: 0;
 }
 
 .hero {
@@ -794,16 +796,6 @@ footer {
 }
 
 /* PLACES PAGE */
-#places-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-
-  margin: 0;
-  padding: 0;
-}
 
 .places-type {
   margin-top: 1.5em;
@@ -817,25 +809,5 @@ footer {
 
 /* ABOUT US PAGE */
 
-#about-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
 
-  margin: 0;
-  padding: 0;
-}
-
-/* LOGIN PAGE */
-#login-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-
-  margin: 0;
-  padding: 0;
-}
+/* SEARCH PAGE */

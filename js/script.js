@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			body.insertAdjacentHTML("beforeend", footer);
 
 			setActiveLink();
+			setupSearch();
 		} catch (error) {
 			console.error(error);
 			body.innerHTML = "<h1>Failed to load header and footer</h1>";
@@ -46,6 +47,21 @@ document.addEventListener("DOMContentLoaded", () => {
 				link.classList.remove("active");
 			}
 		});
+	};
+
+	const setupSearch = () => {
+		document
+			.querySelector(".search-form")
+			.addEventListener("submit", function (event) {
+				event.preventDefault();
+
+				const query = document.getElementById("search").value.trim();
+				if (query) {
+					window.location.href = `/pages/search.html?q=${encodeURIComponent(
+						query
+					)}`;
+				}
+			});
 	};
 
 	loadHeaderAndFooter();
