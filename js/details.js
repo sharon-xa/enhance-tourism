@@ -84,6 +84,7 @@ function populateGallery(images) {
 		const imgElement = document.createElement("img");
 		imgElement.src = image;
 		imgElement.alt = "Gallery Image";
+		imgElement.loading = "lazy";
 
 		simpleGallery.appendChild(imgElement);
 	});
