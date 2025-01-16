@@ -196,7 +196,17 @@ footer {
 }
 
 .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 	cursor: pointer;
+}
+
+.dropdown-toggle > img {
+  width: 18px;
+  height: 18px;
+  display: inline;
 }
 
 .dropdown-menu {
@@ -523,7 +533,7 @@ footer {
 
 .details-page {
   width: 75%;
-  margin: 1em auto;
+  margin: 4em auto;
 
   display: flex;
   flex-direction: column;
