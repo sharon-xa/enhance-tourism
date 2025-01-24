@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		navLinks.forEach((link) => {
 			const page = link.getAttribute("data-page");
-			console.log(page);
 
 			if (
 				page === currentPage.replace(".html", "") ||

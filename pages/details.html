@@ -10,107 +10,126 @@
 	</head>
 
 	<body>
+		<button class="go-back-btn">
+			<img src="../assets/arrow-left-solid.svg" alt="go back" />
+		</button>
 		<main class="details-page">
-			<div class="details-header">
-				<button class="go-back-btn">
-					<img
-						src="../assets/arrow-left-solid.svg"
-						alt="go back"
-						loading="lazy"
-					/>
-				</button>
-				<h1 class="place-name"></h1>
-			</div>
+			<!-- LEFT -->
+			<section class="left-side">
+				<!-- Gallery -->
+				<div class="simple-gallery" id="simple-gallery">
+					<div class="gallery-img-container"></div>
+					<button class="gallery-btn prev-btn">
+						<img src="../assets/arrow-left-solid-white.svg" />
+					</button>
+					<button class="gallery-btn next-btn">
+						<img src="../assets/arrow-right-solid-white.svg" />
+					</button>
+				</div>
 
-			<!-- Gallery Section -->
-			<section class="simple-gallery" id="simple-gallery"></section>
+				<!-- Information -->
+				<div class="info">
+					<p class="place-category">natural</p>
+					<h2 class="place-name">Geli ali beg waterfall</h2>
+					<p class="place-description">
+						Geli Ali Beg Waterfall is a stunning natural waterfall
+						located near Erbil. The waterfall is surrounded by lush
+						greenery and is a popular spot for locals and tourists
+						alike. The waterfall is a great place to relax and enjoy
+						the beauty of nature. The waterfall is also a great spot
+						for photography, with many beautiful views to capture.
+						The waterfall is a must-visit destination for anyone
+						visiting Erbil.
+					</p>
+					<ul class="place-details"></ul>
+				</div>
 
-			<div class="two_section_group">
-				<!-- Information Box -->
-				<section class="info">
-					<h2 class="place-name"></h2>
-					<p class="place-description"></p>
-					<ul class="place-list-of-info"></ul>
-				</section>
-
-				<!-- Location Section -->
-				<section class="details-location">
-					<!-- <h2>Location</h2> -->
-					<!-- <iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200.1116332005802!2d44.44638941779097!3d36.631534313026876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400683ae4e1fd4ef%3A0xbf9021078d801a9d!2sGeli%20Ali%20Bag%20Waterfall!5e0!3m2!1sen!2siq!4v1736181398682!5m2!1sen!2siq"
-							allowfullscreen=""
-							loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade"
-						>
-						</iframe> -->
-				</section>
-			</div>
-
-			<div class="two_section_group">
-				<!-- Rating and Reviews Section -->
-				<section class="reviews">
-					<h2>Ratings and Reviews</h2>
+				<!-- Reviews -->
+				<div class="reviews">
+					<h3>Reviews</h3>
 					<div class="reviews-container">
-						<!-- <div class="review">
-								<p>
-									<strong>John Doe:</strong> An absolutely
-									stunning place! Highly recommend visiting
-									early in the morning.
-									<span class="rating">★★★★★</span>
-								</p>
+						<div class="review">
+							<div class="review-header">
+								<span class="review-user">John Doe</span>
+								<span class="review-rating">★★★★★</span>
 							</div>
-							<div class="review">
-								<p>
-									<strong>Jane Smith:</strong> Beautiful
-									waterfall but can get crowded on weekends.
-									Still worth the trip!
-									<span class="rating">★★★★☆</span>
-								</p>
-							</div> -->
+							<p class="review-comment">
+								An absolutely stunning place! Highly recommend
+								visiting early in the morning.
+							</p>
+						</div>
+						<div class="review">
+							<div class="review-header">
+								<span class="review-user">Jane Smith</span>
+								<span class="review-rating">★★★★☆</span>
+							</div>
+							<p class="review-comment">
+								Beautiful waterfall but can get crowded on
+								weekends. Still worth the trip!
+							</p>
+						</div>
 					</div>
-				</section>
-				<!-- Review Form Section -->
-				<section class="review-form-container">
-					<h2>Leave a Review</h2>
-					<div class="review-form">
-						<form id="reviewForm">
-							<label for="name">Your Name</label>
-							<input
-								type="text"
-								id="name"
-								name="name"
-								placeholder="Enter your name"
-								required
-							/>
 
-							<label for="rating">Your Rating</label>
-							<select id="rating" name="rating" required>
-								<option value="" disabled selected>
-									Choose rating
-								</option>
-								<option value="5">★★★★★</option>
-								<option value="4">★★★★☆</option>
-								<option value="3">★★★☆☆</option>
-								<option value="2">★★☆☆☆</option>
-								<option value="1">★☆☆☆☆</option>
-							</select>
-
-							<label for="comment">Your Review</label>
-							<textarea
-								id="comment"
-								name="comment"
-								rows="4"
-								placeholder="Write your review here..."
-								required
-							></textarea>
-
-							<button type="submit" class="submit-btn">
+					<!-- Add Review Section -->
+					<div class="add-review">
+						<h4>Add a Review</h4>
+						<form id="review-form">
+							<div class="form-group">
+								<label for="review-name">Your Name</label>
+								<input
+									type="text"
+									id="review-name"
+									name="name"
+									placeholder="Enter your name"
+									required
+								/>
+							</div>
+							<div class="form-group">
+								<label for="review-rating">Your Rating</label>
+								<select
+									id="review-rating"
+									name="rating"
+									required
+								>
+									<option value="" disabled selected>
+										Select a rating
+									</option>
+									<option value="5">★★★★★</option>
+									<option value="4">★★★★☆</option>
+									<option value="3">★★★☆☆</option>
+									<option value="2">★★☆☆☆</option>
+									<option value="1">★☆☆☆☆</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="review-comment">Your Comment</label>
+								<textarea
+									id="review-comment"
+									name="comment"
+									rows="4"
+									placeholder="Write your review here"
+									required
+								></textarea>
+							</div>
+							<button type="submit" class="submit-review">
 								Submit Review
 							</button>
 						</form>
 					</div>
-				</section>
-			</div>
+				</div>
+			</section>
+
+			<!-- RIGHT -->
+			<section class="right-side">
+				<!-- Location -->
+				<div class="details-location"></div>
+
+				<!-- Other places -->
+				<div class="suggestions">
+					<h3>Other Places You Might Like</h3>
+					<ul class="suggestions-list"></ul>
+				</div>
+			</section>
 		</main>
 	</body>
 </html>

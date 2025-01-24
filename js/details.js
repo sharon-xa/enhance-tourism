@@ -19,34 +19,74 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// Populate the page
+	populateGallery(place.gallery);
 	populatePlaceDetails(place);
+	populateSuggestions(place);
 });
+
+document.querySelector(".go-back-btn").addEventListener("click", () => {
+	history.back();
+});
+
+function populateGallery(images) {
+	const imgContainer = document.querySelector(".gallery-img-container");
+	const prevBtn = document.querySelector(".prev-btn");
+	const nextBtn = document.querySelector(".next-btn");
+
+	let currentIndex = 0;
+	let totalSlides = 0;
+
+	const loadImages = () => {
+		images.forEach((image) => {
+			const imgElement = document.createElement("img");
+			imgElement.src = image;
+			imgElement.loading = "lazy";
+
+			imgContainer.appendChild(imgElement);
+		});
+
+		totalSlides = images.length;
+
+		imgContainer.style.width = `${100 * totalSlides}%`;
+	};
+
+	const updateSlide = (index) => {
+		currentIndex = (index + totalSlides) % totalSlides;
+		const offset = -(currentIndex * 100) / totalSlides;
+		imgContainer.style.transform = `translateX(${offset}%)`;
+	};
+
+	prevBtn.addEventListener("click", () => updateSlide(currentIndex - 1));
+	nextBtn.addEventListener("click", () => updateSlide(currentIndex + 1));
+
+	loadImages();
+}
 
 const populatePlaceDetails = (place) => {
 	// Populate information section
+	document.querySelector(".place-category").textContent = place.category;
+
 	document.querySelectorAll(".place-name").forEach((placeName) => {
 		placeName.textContent = place.name;
 	});
-	document.querySelector(".place-description").textContent =
-		place.description;
-	document.querySelector(".place-list-of-info").innerHTML = `
-    <li><strong>Location:</strong> ${place.location}</li>
-    <li><strong>Tourists Annually:</strong> ${place.touristsNum}</li>
-    <li><strong>Open Time:</strong> ${
-		place.alwaysOpen ? "24/7" : `${place.openTime} - ${place.closeTime}`
-	}</li>
-    <li><strong>Rating:</strong> ${place.rating}</li>
-    <li><strong>Price of Entrance:</strong> ${place.PriceOfEntrance}</li>
-  `;
 
-	// Populate gallery
-	populateGallery(place.gallery);
+	document.querySelector(".place-description").textContent =
+		place.detaildDescription;
+
+	document.querySelector(".place-details").innerHTML = `
+		<li><strong>Location:</strong> ${place.location}</li>
+		<li><strong>Rating:</strong> ${place.rating} ⭐</li>
+		<li><strong>Open Time:</strong> ${
+			place.alwaysOpen ? "24/7" : `${place.openTime} - ${place.closeTime}`
+		}</li>
+		<li><strong>Price of Entrance:</strong> ${
+			place.PriceOfEntrance === 0 ? "Free" : `$${place.PriceOfEntrance}`
+		}</li>
+		<li><strong>Tourists Annually:</strong> ${place.touristsNum}</li>
+	  `;
 
 	// populate map
 	const mapSection = document.querySelector(".details-location");
-
-	const h2 = document.createElement("h2");
-	h2.textContent = "Location";
 
 	const iframe = document.createElement("iframe");
 	iframe.src = place.mapEmbedUrl;
@@ -54,7 +94,6 @@ const populatePlaceDetails = (place) => {
 	iframe.loading = "lazy";
 	iframe.referrerpolicy = "no-referrer-when-downgrade";
 
-	mapSection.appendChild(h2);
 	mapSection.appendChild(iframe);
 
 	// Populate reviews
@@ -62,54 +101,62 @@ const populatePlaceDetails = (place) => {
 	reviewsContainer.innerHTML = place.reviews
 		.map(
 			(review) => `
-      <div class="review">
-        <p>
-          <strong>${review.user}:</strong> ${review.comment}
-          <span class="rating">${"★".repeat(review.rating)}${"☆".repeat(
-				5 - review.rating
-			)}</span>
-        </p>
-      </div>
-    `
+			<div class="review">
+				<div class="review-header">
+					<span class="review-user">${review.user}</span>
+					<span class="review-rating">
+					${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}
+					</span>
+				</div>
+				<p class="review-comment">${review.comment}</p>
+			</div>`
 		)
 		.join("");
 };
 
-// Function to populate the gallery dynamically
-function populateGallery(images) {
-	const simpleGallery = document.getElementById("simple-gallery");
+const populateSuggestions = (currentPlace) => {
+	const suggestionsContainer = document.querySelector(".suggestions-list");
 
-	// Populate all images
-	images.forEach((image) => {
-		const imgElement = document.createElement("img");
-		imgElement.src = image;
-		imgElement.alt = "Gallery Image";
-		imgElement.loading = "lazy";
+	const relatedPlaces = places.filter(
+		(place) =>
+			place.name.toLowerCase() !== currentPlace.name.toLowerCase() &&
+			place.category.toLowerCase() === currentPlace.category.toLowerCase()
+	);
 
-		simpleGallery.appendChild(imgElement);
+	if (relatedPlaces.length === 0) {
+		suggestionsContainer.innerHTML = "<li>No related places found</li>";
+		return;
+	}
+
+	relatedPlaces.forEach((place) => {
+		const suggestion = document.createElement("li");
+		suggestion.innerHTML = `
+			<a href="/pages/details.html?name=${place.name}">${place.name}</a>
+			`;
+
+		suggestionsContainer.appendChild(suggestion);
 	});
-}
+};
 
-document.querySelector(".go-back-btn").addEventListener("click", () => {
-	history.back();
-});
-
-document.getElementById("reviewForm").addEventListener("submit", function (e) {
+document.getElementById("review-form").addEventListener("submit", function (e) {
 	e.preventDefault();
 
 	// Get form data
-	const name = document.getElementById("name").value;
-	const rating = document.getElementById("rating").value;
-	const comment = document.getElementById("comment").value;
+	const name = document.getElementById("review-name").value;
+	const rating = document.getElementById("review-rating").value;
+	const comment = document.getElementById("review-comment").value;
 
 	// Create new review element
 	const newReview = document.createElement("div");
 	newReview.classList.add("review");
 	newReview.innerHTML = `
-    <p>
-      <strong>${name}:</strong> ${comment}
-      <span class="rating">${"★".repeat(rating)}${"☆".repeat(5 - rating)}</span>
-    </p>
+	<div class="review-header">
+		<span class="review-user">${name}</span>
+		<span class="review-rating">
+		${"★".repeat(rating)}${"☆".repeat(5 - rating)}
+		</span>
+	</div>
+	<p class="review-comment">${comment}</p>
   `;
 
 	// Append the new review to the reviews section
