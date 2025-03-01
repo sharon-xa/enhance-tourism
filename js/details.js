@@ -37,7 +37,7 @@ function populateGallery(images) {
 	let totalSlides = 0;
 
 	const loadImages = () => {
-		images.forEach((image, index) => {
+		images.forEach((image) => {
 			const slideDiv = document.createElement("div");
 			slideDiv.classList.add("gallery-slide");
 			slideDiv.style.backgroundImage = `url(${image})`; // Set the background image for the slide
